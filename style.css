@@ -1,0 +1,514 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins";
+  scroll-behavior: smooth;
+}
+:root {
+  --ffp: "Poppins";
+  --main: #d80e0e;
+  --siva: #f1f1f1;
+}
+.navigacija {
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+  background-color: black;
+}
+
+.navigacija .logo a {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  letter-spacing: 2px;
+  cursor: default;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+.navigacija .katalog {
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+}
+.burger {
+  display: none;
+}
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px;
+}
+.navigacija .katalog a {
+  text-decoration: none;
+  color: #d3d3d3;
+  letter-spacing: 1px;
+  transition: all 0.1s;
+  transform: scale(1);
+}
+
+.katalog a::after {
+  position: absolute;
+  content: "";
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--main);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s;
+}
+.katalog a:hover {
+  color: rgb(255, 255, 255);
+}
+.katalog a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+.banner {
+  height: 100vh;
+  background: url(./img/pexels-pixabay-248747.jpg);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding-left: 60px;
+}
+.banner .content {
+  text-align: center;
+  max-width: 600px;
+}
+.content .tekst h2 {
+  font-weight: 500;
+  padding-bottom: 15px;
+}
+
+.banner .content .tekst a {
+  color: white;
+  text-decoration: none;
+  position: relative;
+  padding: 10px;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  color: var(--main);
+}
+
+.tekst a span {
+  display: block;
+  position: absolute;
+  background: var(--main);
+}
+.tekst a span:nth-child(1) {
+  left: 0;
+  bottom: 0;
+  width: 1.5px;
+  height: 100%;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.5s;
+  transition-delay: 0.3s;
+}
+.tekst a:hover span:nth-child(1) {
+  transform: scaleY(1);
+  transform-origin: bottom;
+  transition: transform 0.5s;
+}
+
+.tekst a span:nth-child(2) {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1.5px;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s;
+  transition-delay: 0.3s;
+}
+.tekst a:hover span:nth-child(2) {
+  transform: scaleX(1);
+  transform-origin: left;
+  transition: transform 0.5s;
+}
+
+.tekst a span:nth-child(3) {
+  right: 0;
+  bottom: 0;
+  width: 1.5px;
+  height: 100%;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.5s;
+  transition-delay: 0.3s;
+}
+.tekst a:hover span:nth-child(3) {
+  transform: scaleY(1);
+  transform-origin: top;
+  transition: transform 0.5s;
+}
+
+.tekst a span:nth-child(4) {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 1.5px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s;
+  transition-delay: 0.3s;
+}
+.tekst a:hover span:nth-child(4) {
+  transform: scaleX(1);
+  transform-origin: right;
+  transition: transform 0.5s;
+}
+
+.onama {
+  height: 80vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.onama .tekst {
+  max-width: 650px;
+}
+
+.mogucnosti {
+  height: 140vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.mogucnosti .tekst {
+  letter-spacing: 1px;
+  max-width: 650px;
+  padding-bottom: 110px;
+}
+.mogucnosti .tekst .marke ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+  font-weight: 500;
+  color: var(--main);
+}
+.mogucnosti .azuriranja .lista {
+  list-style-type: none;
+  text-align: left;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+}
+
+.mogucnosti .slika {
+  background: url(./img/pexels-thisisengineering-3862626.jpg);
+  height: 100vh;
+  width: 430px;
+  background-position: center;
+  background-size: cover;
+}
+
+.lokacija {
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f1f1f1;
+}
+.kontakt {
+  height: 70vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.kontakt .tekst {
+  max-width: 500px;
+  text-align: center;
+}
+
+.kontakt .tekst i {
+  color: var(--main);
+  font-size: 2.2rem;
+  padding: 15px 0;
+  animation: strijelica 1.2s linear infinite;
+}
+.kontakt .tekst p {
+  font-weight: 500;
+}
+@keyframes strijelica {
+  0%,
+  100% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+.kontakt .socials .btn {
+  text-decoration: none;
+  height: 70px;
+  width: 70px;
+  background: #f1f1f1;
+  color: var(--main);
+  margin: 10px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px -5px #00000070;
+  overflow: hidden;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.btn i {
+  font-size: 2rem;
+  transition: 0.25s linear;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+.btn i:hover {
+  transform: scale(1.5);
+  color: #f1f1f1;
+}
+.btn::before {
+  content: "";
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  background: var(--main);
+  transform: rotate(45deg);
+  left: -110%;
+  top: 90%;
+}
+
+.btn:hover::before {
+  animation: animacija 0.7s 1;
+  top: -10%;
+  left: -10%;
+}
+
+@keyframes animacija {
+  0% {
+    left: -110%;
+    top: 90%;
+  }
+
+  50% {
+    left: 10%;
+    top: -30%;
+  }
+
+  100% {
+    top: -10%;
+    left: -10%;
+  }
+}
+.zaglavlje {
+  text-align: center;
+  color: black;
+  background-color: var(--siva);
+}
+@media only screen and (max-width: 510px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .navigacija .logo a {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    letter-spacing: 2px;
+    cursor: default;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .katalog {
+    position: absolute;
+    right: 0px;
+    height: 94.5vh;
+    top: 5.5vh;
+    background: black;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+    transform: translateX(100%);
+    transition: all 0.3s ease-in;
+  }
+
+  .burger {
+    display: block;
+    cursor: pointer;
+  }
+
+  .navigacija .katalog a {
+    text-decoration: none;
+    color: #d3d3d3;
+    letter-spacing: 0px;
+    height: 100%;
+    padding-top: 30px;
+  }
+
+  .katalog a::after {
+    display: none;
+  }
+  .katalog a:hover {
+    display: none;
+  }
+  .katalog a:hover::after {
+    display: none;
+  }
+  .banner {
+    height: 60vh;
+    display: flex;
+    align-items: baseline;
+    padding: 100px 20px;
+  }
+  .banner .content {
+    max-width: 220px;
+    font-size: 0.6rem;
+  }
+
+  .onama {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+  }
+  .onama .tekst {
+    max-width: 350px;
+  }
+
+  .onama .slika svg {
+    height: 180px;
+  }
+  .mogucnosti {
+    height: 150vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .mogucnosti .slika {
+    display: none;
+  }
+  .mogucnosti .tekst {
+    max-width: 350px;
+  }
+  .mogucnosti .tekst .marke {
+    padding-top: 180px;
+  }
+  .marke ul {
+    display: flex;
+    flex-direction: column;
+  }
+  .tekst .marke {
+    text-align: center;
+  }
+  .azuriranja .lista li {
+    letter-spacing: 0;
+  }
+
+  .lokacija {
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    overflow-x: hidden;
+  }
+
+  .kontakt {
+    flex-direction: column;
+    height: 50vh;
+  }
+  .kontakt .tekst h2 {
+    font-size: 1.1rem;
+  }
+  .kontakt .socials .btn {
+    height: 40px;
+    width: 40px;
+    border-radius: 6px;
+  }
+  .btn i {
+    font-size: 1.6rem;
+  }
+  .aktivno {
+    transform: translateX(0);
+  }
+}
+
+@media only screen and (min-width: 511px) and (max-width: 1100px) {
+  .navigacija .katalog {
+    width: 80%;
+    padding: 10px 50px;
+  }
+  .katalog a {
+    font-size: 0.7rem;
+  }
+  .banner .content .tekst {
+    font-size: 0.9rem;
+    max-width: 400px;
+  }
+  .onama {
+    height: 50vh;
+  }
+  .onama,
+  .mogucnosti {
+    padding: 30px;
+  }
+  .mogucnosti {
+    height: 110vh;
+  }
+  .mogucnosti .marke {
+    padding-top: 30px;
+  }
+  .mogucnosti .slika {
+    height: 500px;
+  }
+  .onama .slika svg {
+    display: none;
+  }
+  .kontakt {
+    height: 60vh;
+  }
+}
+
+@keyframes anim1 {
+  from {
+    transform: translateX(250px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+@keyframes anim2 {
+  from {
+    transform: translateX(-150px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
